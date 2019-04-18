@@ -1,11 +1,12 @@
 #include "project1.h"
 
-void insertion_sort(int* a, int size)
+void insertion_sort(std::vector<int>& a)
 {
-	for (int i = 1; i < size; ++i)
+	size_t len = a.size();
+	for (size_t i = 1; i < len; ++i)
 	{
 		int temp = a[i];
-		int j = i;
+		size_t j = i;
 		while (j > 0 && a[j - 1] > temp)
 		{
 			a[j] = a[j - 1];

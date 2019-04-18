@@ -1,10 +1,11 @@
 #include "project1.h"
 
-void bubble_sort(int* a, int size)
+void bubble_sort(std::vector<int>& a)
 {
-	for (int i = 0; i < size; ++i)
+	size_t len = a.size();
+	for (size_t i = 0; i < len; ++i)
 	{
-		for (int j = 1; j < size - i; ++j)
+		for (size_t j = 1; j < len - i; ++j)
 		{
 			if (a[j - 1] > a[j])
 			{

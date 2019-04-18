@@ -1,14 +1,11 @@
 #include "project1.h"
 
 #include <iostream>
-#include <ctime>
 #include <random>
 
 void swap(int& a, int& b);
-void print(int* a, int size);
-int* copy(int* a, int* b, int size); // copy a INTO b
-void test_set(int* a, int* b, int test_size);
-void test_bubble(int* a, int size);
+void test_set(int test_size);
+std::ostream& operator<<(std::ostream& out, const std::vector<int>& a);
 
 const int SMALL_SET = 100;
 const int MEDIUM_SET = 1000;
@@ -18,9 +15,7 @@ const int PHAT_ASS_SET = 1000000;
 
 int main()
 {
-	int* a = new int[PHAT_ASS_SET];
-	int* b = new int[PHAT_ASS_SET];
-	test_set(a, b, SMALL_SET);
+	test_set(SMALL_SET);
 	//test_set(a, b, MEDIUM_SET);
 	//test_set(a, b, LARGE_SET);
 	//test_set(a, b, EVEN_LARGER_SET);
@@ -37,27 +32,10 @@ void swap(int& a, int& b)
 	b = temp;
 }
 
-void print(int* a, int size)
+void test_set(int set_size)
 {
-	for (int i = 0; i < size; ++i)
-	{
-		std::cout << a[i] << " ";
-	}
-	std::cout << "\n\n\n";
-}
-
-// copy a INTO b
-int* copy(int* a, int* b, int size)
-{
-	for (int i = 0; i < size; ++i)
-	{
-		b[i] = a[i];
-	}
-	return b;
-}
-
-void test_set(int* a, int* b, int set_size)
-{
+	std::vector<int> a = std::vector<int>(set_size);
+	std::vector<int> b = std::vector<int>(set_size);
 	for (int i = 0; i < set_size; ++i)
 	{
 		a[i] = i + 1;
@@ -72,40 +50,43 @@ void test_set(int* a, int* b, int set_size)
 		swap(a[i], a[distr(eng)]);
 	}
 
-	b = copy(a, b, set_size);
-	copy(a, b, set_size);
+	b = a;
 
 	std::cout << "-------------------- BUBBLE SORT --------------------\n\n";
 	std::cout << "BEFORE:\n";
-	print(b, set_size);
-
-	test_bubble(b, set_size);
+	std::cout << b;
+	bubble_sort(b);
 
 	std::cout << "AFTER:\n";
-	print(b, set_size);
+	std::cout << b;
 
-	copy(a, b, set_size);
+	b = a;
 	std::cout << "-------------------- INSERTION SORT --------------------\n\n";
 	std::cout << "BEFORE:\n";
-	print(b, set_size);
-
-	insertion_sort(b, set_size);
+	std::cout << b;
+	insertion_sort(b);
 
 	std::cout << "AFTER:\n";
-	print(b, set_size);
+	std::cout << b;
 
-	copy(a, b, set_size);
+	b = a;
 	std::cout << "------------------- SPIN THE BOTTLE -------------------\n\n";
 	std::cout << "BEFORE:\n";
-	print(b, set_size);
+	std::cout << b;
 
-	spin_the_bottle_sort(b, set_size);
+	spin_the_bottle_sort(b);
 
 	std::cout << "AFTER:\n";
-	print(b, set_size);
+	std::cout << b;
 }
 
-void test_bubble(int* a, int size)
+std::ostream& operator<<(std::ostream& out, const std::vector<int>& a)
 {
-	bubble_sort(a, size);
+	size_t len = a.size();
+	for (size_t i = 0; i < len; ++i)
+	{
+		out << a[i] << " ";
+	}
+	out << "\n\n";
+	return out;
 }

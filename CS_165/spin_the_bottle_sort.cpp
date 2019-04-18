@@ -2,11 +2,12 @@
 #include <random>
 #include <iostream>
 
-bool sorted(int* a, int size)
+bool sorted(std::vector<int>& a)
 {
+	size_t len = a.size();
 	bool sorted = true;
 	int i = 0;
-	while (sorted && i < size - 1)
+	while (sorted && i < len - 1)
 	{
 		sorted = a[i] < a[i + 1];
 		++i;
@@ -14,14 +15,15 @@ bool sorted(int* a, int size)
 	return sorted;
 }
 
-void spin_the_bottle_sort(int* a, int size)
+void spin_the_bottle_sort(std::vector<int>& a)
 {
+	size_t len = a.size();
 	std::random_device rd;
 	std::mt19937 eng(rd());
-	std::uniform_int_distribution<> distr(0, size - 1);
-	while (!sorted(a, size))
+	std::uniform_int_distribution<> distr(0, len - 1);
+	while (!sorted(a))
 	{
-		for (int i = 0; i < size; ++i)
+		for (int i = 0; i < len; ++i)
 		{
 			int j = distr(eng);
 			//std::cout << rand_i << "        " << rand_j;
