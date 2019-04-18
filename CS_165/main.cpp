@@ -74,7 +74,6 @@ void test_set(int set_size)
 	std::cout << "------------------- SPIN THE BOTTLE -------------------\n\n";
 	std::cout << "BEFORE:\n";
 	std::cout << b;
-
 	spin_the_bottle_sort(b);
 
 	std::cout << "AFTER:\n";
