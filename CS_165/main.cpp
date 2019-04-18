@@ -15,11 +15,11 @@ const int PHAT_ASS_SET = 1000000;
 
 int main()
 {
-	test_set(SMALL_SET);
-	//test_set(a, b, MEDIUM_SET);
-	//test_set(a, b, LARGE_SET);
-	//test_set(a, b, EVEN_LARGER_SET);
-	//test_set(a, b, PHAT_ASS_SET);
+	//test_set(SMALL_SET);
+	test_set(MEDIUM_SET);
+	//test_set(LARGE_SET);
+	//test_set(EVEN_LARGER_SET);
+	//test_set(PHAT_ASS_SET);
 
 	system("pause");
 	return 0;
