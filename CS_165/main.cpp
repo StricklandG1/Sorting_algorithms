@@ -21,10 +21,10 @@ int main()
 	int* a = new int[PHAT_ASS_SET];
 	int* b = new int[PHAT_ASS_SET];
 	test_set(a, b, SMALL_SET);
-	test_set(a, b, MEDIUM_SET);
-	test_set(a, b, LARGE_SET);
-	test_set(a, b, EVEN_LARGER_SET);
-	test_set(a, b, PHAT_ASS_SET);
+	//test_set(a, b, MEDIUM_SET);
+	//test_set(a, b, LARGE_SET);
+	//test_set(a, b, EVEN_LARGER_SET);
+	//test_set(a, b, PHAT_ASS_SET);
 
 	system("pause");
 	return 0;
@@ -90,6 +90,16 @@ void test_set(int* a, int* b, int set_size)
 	print(b, set_size);
 
 	insertion_sort(b, set_size);
+
+	std::cout << "AFTER:\n";
+	print(b, set_size);
+
+	copy(a, b, set_size);
+	std::cout << "------------------- SPIN THE BOTTLE -------------------\n\n";
+	std::cout << "BEFORE:\n";
+	print(b, set_size);
+
+	spin_the_bottle_sort(b, set_size);
 
 	std::cout << "AFTER:\n";
 	print(b, set_size);
