@@ -5,6 +5,7 @@
 
 void swap(int& a, int& b);
 void test_set(int test_size);
+void shell_sequence(std::vector<int>& a, int size);
 std::ostream& operator<<(std::ostream& out, const std::vector<int>& a);
 
 const int SMALL_SET = 100;
@@ -15,8 +16,8 @@ const int PHAT_ASS_SET = 1000000;
 
 int main()
 {
-	//test_set(SMALL_SET);
-	test_set(MEDIUM_SET);
+	test_set(SMALL_SET);
+	//test_set(MEDIUM_SET);
 	//test_set(LARGE_SET);
 	//test_set(EVEN_LARGER_SET);
 	//test_set(PHAT_ASS_SET);
@@ -78,6 +79,29 @@ void test_set(int set_size)
 
 	std::cout << "AFTER:\n";
 	std::cout << b;
+
+	b = a;
+	std::cout << "------------------- SHELL SORT -------------------\n\n";
+	std::cout << "BEFORE:\n";
+	std::cout << b;
+	
+	std::vector<int> gaps;
+	shell_sequence(gaps, set_size);
+	std::cout << gaps;
+	shell_sort(b, gaps);
+	
+	std::cout << "AFTER:\n";
+	std::cout << b;
+
+	
+}
+
+void shell_sequence(std::vector<int>& a, int size)
+{
+	for (size_t i = size / 2; i != 0; i /= 2)
+	{
+		a.push_back(i);
+	}
 }
 
 std::ostream& operator<<(std::ostream& out, const std::vector<int>& a)
