@@ -1,0 +1,6 @@
+spin_almost,100,0.097
+spin_almost,100,0.097
+spin_almost,100,0.066
+spin_almost,1000,4.88
+spin_almost,1000,3.635
+spin_almost,1000,4.642
