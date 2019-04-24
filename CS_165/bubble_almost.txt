@@ -1,0 +1,9 @@
+bubble_almost,100,0.003
+bubble_almost,100,0.003
+bubble_almost,100,0.004
+bubble_almost,1000,0.274
+bubble_almost,1000,0.269
+bubble_almost,1000,0.279
+bubble_almost,10000,25.856
+bubble_almost,10000,25.893
+bubble_almost,10000,25.868

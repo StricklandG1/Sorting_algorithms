@@ -1,0 +1,9 @@
+insertion_almost,100,0
+insertion_almost,100,0.001
+insertion_almost,100,0.001
+insertion_almost,1000,0.017
+insertion_almost,1000,0.011
+insertion_almost,1000,0.013
+insertion_almost,10000,0.148
+insertion_almost,10000,0.182
+insertion_almost,10000,0.176
