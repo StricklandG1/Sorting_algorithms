@@ -4,3 +4,6 @@ shell_almost,100,0.002
 shell_almost,1000,0.024
 shell_almost,1000,0.024
 shell_almost,1000,0.021
+shell_almost,1000,0.017
+shell_almost,1000,0.018
+shell_almost,1000,0.022

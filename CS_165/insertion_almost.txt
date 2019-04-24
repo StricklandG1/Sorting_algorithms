@@ -4,3 +4,6 @@ insertion_almost,100,0.002
 insertion_almost,1000,0.023
 insertion_almost,1000,0.015
 insertion_almost,1000,0.016
+insertion_almost,1000,0.011
+insertion_almost,1000,0.015
+insertion_almost,1000,0.013
