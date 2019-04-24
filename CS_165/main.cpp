@@ -11,6 +11,8 @@ void test_set(int test_size, bool almost_sorted);
 void shell_sequence(std::vector<int>& a, int size);
 std::ostream& operator<<(std::ostream& out, const std::vector<int>& a);
 void write_to_file(std::string fName, int n, double t);
+void annealing_reps(std::vector<int>& a, int size, int reps);
+
 
 const int SMALL_SET = 100;
 const int MEDIUM_SET = 1000;
@@ -20,18 +22,18 @@ const int PHAT_ASS_SET = 1000000;
 
 int main()
 {
-	/*test_set(SMALL_SET, false);
+	test_set(SMALL_SET, false);
 	test_set(SMALL_SET, false);
 	test_set(SMALL_SET, false);
 	test_set(SMALL_SET, true);
 	test_set(SMALL_SET, true);
-	test_set(SMALL_SET, true);*/
-	test_set(MEDIUM_SET, false);
+	test_set(SMALL_SET, true);
+	/*test_set(MEDIUM_SET, false);
 	test_set(MEDIUM_SET, false);
 	test_set(MEDIUM_SET, false);
 	test_set(MEDIUM_SET, true);
 	test_set(MEDIUM_SET, true);
-	test_set(MEDIUM_SET, true);
+	test_set(MEDIUM_SET, true);*/
 	//test_set(MEDIUM_SET);
 	//test_set(LARGE_SET);
 	//test_set(EVEN_LARGER_SET);
@@ -123,6 +125,26 @@ void test_set(int set_size, bool almost_sorted)
 	t = static_cast<float>(end - start) / CLOCKS_PER_SEC;
 	fName = (almost_sorted) ? "shell_almost" : "shell_random";
 	write_to_file(fName, set_size, t);
+
+	b = a;
+	std::cout << "------------------- ANNEALING SORT -------------------\n\n";
+	std::cout << "BEFORE:\n";
+	std::cout << b;
+	gaps.clear();
+	shell_sequence(gaps, set_size);
+	std::cout << "gaps:\n";
+	gaps.push_back(0);
+	std::cout << gaps;
+
+	std::vector<int> reps;
+	annealing_reps(reps, gaps.size(), 3);
+	std::cout << "reps\n";
+	std::cout << reps;
+	start = clock();
+	annealing_sort(b, gaps, reps);
+	end = clock();
+	std::cout << "AFTER\n";
+	std::cout << b;
 }
 
 void shell_sequence(std::vector<int>& a, int size)
@@ -149,4 +171,13 @@ void write_to_file(std::string fName, int n, double t)
 	std::ofstream outFile;
 	outFile.open(fName + ".txt", std::ofstream::app);
 	outFile << fName << "," << n << "," << t << "\n";
+}
+
+void annealing_reps(std::vector<int>& a, int size, int reps)
+{
+	for (int i = 0; i < size - 1; ++i)
+	{
+		a.push_back(reps);
+	}
+	a.push_back(0);
 }

@@ -1,9 +1,0 @@
-insertion_random,100,0.004
-insertion_random,100,0.003
-insertion_random,100,0.004
-insertion_random,1000,0.353
-insertion_random,1000,0.195
-insertion_random,1000,0.21
-insertion_random,1000,0.3
-insertion_random,1000,0.222
-insertion_random,1000,0.22

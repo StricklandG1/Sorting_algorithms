@@ -1,9 +1,0 @@
-bubble_random,100,0.007
-bubble_random,100,0.008
-bubble_random,100,0.011
-bubble_random,1000,0.677
-bubble_random,1000,0.476
-bubble_random,1000,0.744
-bubble_random,1000,0.769
-bubble_random,1000,0.601
-bubble_random,1000,0.584

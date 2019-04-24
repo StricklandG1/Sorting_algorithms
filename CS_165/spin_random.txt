@@ -1,9 +1,0 @@
-spin_random,100,0.036
-spin_random,100,0.076
-spin_random,100,0.059
-spin_random,1000,4.957
-spin_random,1000,3.45
-spin_random,1000,4.313
-spin_random,1000,4.349
-spin_random,1000,3.411
-spin_random,1000,4.741
