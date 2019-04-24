@@ -1,0 +1,9 @@
+spin_random,100,0.028
+spin_random,100,0.042
+spin_random,100,0.033
+spin_random,1000,4.491
+spin_random,1000,5.891
+spin_random,1000,4.255
+spin_random,10000,432.129
+spin_random,10000,508.141
+spin_random,10000,434.53
