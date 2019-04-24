@@ -26,7 +26,6 @@ void spin_the_bottle_sort(std::vector<int>& a)
 		for (int i = 0; i < len; ++i)
 		{
 			int j = distr(eng);
-			//std::cout << rand_i << "        " << rand_j;
 			if (i < j)
 			{
 				if (a[i] > a[j])
