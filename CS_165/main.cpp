@@ -28,16 +28,30 @@ int main()
 	test_set(SMALL_SET, true);
 	test_set(SMALL_SET, true);
 	test_set(SMALL_SET, true);
-	/*test_set(MEDIUM_SET, false);
+	test_set(MEDIUM_SET, false);
 	test_set(MEDIUM_SET, false);
 	test_set(MEDIUM_SET, false);
 	test_set(MEDIUM_SET, true);
 	test_set(MEDIUM_SET, true);
-	test_set(MEDIUM_SET, true);*/
-	//test_set(MEDIUM_SET);
-	//test_set(LARGE_SET);
-	//test_set(EVEN_LARGER_SET);
-	//test_set(PHAT_ASS_SET);
+	test_set(MEDIUM_SET, true);
+	test_set(LARGE_SET, false);
+	test_set(LARGE_SET, false);
+	test_set(LARGE_SET, false);
+	test_set(LARGE_SET, true);
+	test_set(LARGE_SET, true);
+	test_set(LARGE_SET, true);
+	test_set(EVEN_LARGER_SET, false);
+	test_set(EVEN_LARGER_SET, false);
+	test_set(EVEN_LARGER_SET, false);
+	test_set(EVEN_LARGER_SET, true);
+	test_set(EVEN_LARGER_SET, true);
+	test_set(EVEN_LARGER_SET, true);
+	test_set(PHAT_ASS_SET, false);
+	test_set(PHAT_ASS_SET, false);
+	test_set(PHAT_ASS_SET, false);
+	test_set(PHAT_ASS_SET, true);
+	test_set(PHAT_ASS_SET, true);
+	test_set(PHAT_ASS_SET, true);
 
 	system("pause");
 	return 0;
@@ -113,7 +127,7 @@ void test_set(int set_size, bool almost_sorted)
 	t = static_cast<float>(end - start) / CLOCKS_PER_SEC;
 	fName = (almost_sorted) ? "spin_almost" : "spin_random";
 	write_to_file(fName, set_size, t);
-
+/*
 	b = a;
 	std::cout << "------------------- SHELL SORT -------------------\n\n";
 	
@@ -145,6 +159,7 @@ void test_set(int set_size, bool almost_sorted)
 	end = clock();
 	std::cout << "AFTER\n";
 	std::cout << b;
+*/
 }
 
 void shell_sequence(std::vector<int>& a, int size)
