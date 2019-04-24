@@ -1,17 +1,17 @@
 #include "project1.h"
 
-void insertion_sort(std::vector<int>& a)
+void insertion_sort(std::vector<int>& nums)
 {
-	size_t len = a.size();
+	size_t len = nums.size();
 	for (size_t i = 1; i < len; ++i)
 	{
-		int temp = a[i];
+		int temp = nums[i];
 		size_t j = i;
-		while (j > 0 && a[j - 1] > temp)
+		while (j > 0 && nums[j - 1] > temp)
 		{
-			a[j] = a[j - 1];
+			nums[j] = nums[j - 1];
 			--j;
 		}
-		a[j] = temp;
+		nums[j] = temp;
 	}
 }

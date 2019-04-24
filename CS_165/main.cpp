@@ -23,8 +23,8 @@ const int PHAT_ASS_SET = 1000000;
 int main()
 {
 	test_set(SMALL_SET, false);
+	/*test_set(SMALL_SET, false);
 	test_set(SMALL_SET, false);
-	test_set(SMALL_SET, false);
 	test_set(SMALL_SET, true);
 	test_set(SMALL_SET, true);
 	test_set(SMALL_SET, true);
@@ -51,7 +51,7 @@ int main()
 	test_set(PHAT_ASS_SET, false);
 	test_set(PHAT_ASS_SET, true);
 	test_set(PHAT_ASS_SET, true);
-	test_set(PHAT_ASS_SET, true);
+	test_set(PHAT_ASS_SET, true);*/
 
 	system("pause");
 	return 0;
@@ -101,44 +101,44 @@ void test_set(int set_size, bool almost_sorted)
 
 	b = a;
 
-	std::cout << "-------------------- BUBBLE SORT --------------------\n\n";
-	double t = 0.0;
+	//std::cout << "-------------------- BUBBLE SORT --------------------\n\n";
+	//double t = 0.0;
 	clock_t start = clock();
-	bubble_sort(b);
+	//bubble_sort(b);
 	clock_t end = clock();
-	t = static_cast<float>(end - start) / CLOCKS_PER_SEC;
-	std::string fName = (almost_sorted) ? "bubble_almost" : "bubble_random";
-	write_to_file(fName, set_size, t);
+	//t = static_cast<float>(end - start) / CLOCKS_PER_SEC;
+	//std::string fName = (almost_sorted) ? "bubble_almost" : "bubble_random";
+	//write_to_file(fName, set_size, t);
 
-	b = a;
-	std::cout << "-------------------- INSERTION SORT --------------------\n\n";
-	start = clock();
-	insertion_sort(b);
-	end = clock();
-	t = static_cast<float>(end - start) / CLOCKS_PER_SEC;
-	fName = (almost_sorted) ? "insertion_almost" : "insertion_random";
-	write_to_file(fName, set_size, t);
+	//b = a;
+	//std::cout << "-------------------- INSERTION SORT --------------------\n\n";
+	//start = clock();
+	//insertion_sort(b);
+	//end = clock();
+	//t = static_cast<float>(end - start) / CLOCKS_PER_SEC;
+	//fName = (almost_sorted) ? "insertion_almost" : "insertion_random";
+	//write_to_file(fName, set_size, t);
 
-	b = a;
-	std::cout << "------------------- SPIN THE BOTTLE -------------------\n\n";
-	start = clock();
-	spin_the_bottle_sort(b);
-	end = clock();
-	t = static_cast<float>(end - start) / CLOCKS_PER_SEC;
-	fName = (almost_sorted) ? "spin_almost" : "spin_random";
-	write_to_file(fName, set_size, t);
-/*
-	b = a;
-	std::cout << "------------------- SHELL SORT -------------------\n\n";
-	
+	//b = a;
+	//std::cout << "------------------- SPIN THE BOTTLE -------------------\n\n";
+	//start = clock();
+	//spin_the_bottle_sort(b);
+	//end = clock();
+	//t = static_cast<float>(end - start) / CLOCKS_PER_SEC;
+	//fName = (almost_sorted) ? "spin_almost" : "spin_random";
+	//write_to_file(fName, set_size, t);
+
+	//b = a;
+	//std::cout << "------------------- SHELL SORT -------------------\n\n";
+	//
 	std::vector<int> gaps;
-	shell_sequence(gaps, set_size);
-	start = clock();
-	shell_sort(b, gaps);
-	end = clock();
-	t = static_cast<float>(end - start) / CLOCKS_PER_SEC;
-	fName = (almost_sorted) ? "shell_almost" : "shell_random";
-	write_to_file(fName, set_size, t);
+	//shell_sequence(gaps, set_size);
+	//start = clock();
+	//shell_sort(b, gaps);
+	//end = clock();
+	//t = static_cast<float>(end - start) / CLOCKS_PER_SEC;
+	//fName = (almost_sorted) ? "shell_almost" : "shell_random";
+	//write_to_file(fName, set_size, t);
 
 	b = a;
 	std::cout << "------------------- ANNEALING SORT -------------------\n\n";
@@ -159,7 +159,7 @@ void test_set(int set_size, bool almost_sorted)
 	end = clock();
 	std::cout << "AFTER\n";
 	std::cout << b;
-*/
+
 }
 
 void shell_sequence(std::vector<int>& a, int size)
