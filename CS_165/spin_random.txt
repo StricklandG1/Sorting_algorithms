@@ -4,3 +4,17 @@ spin_random,100,0.059
 spin_random,1000,4.957
 spin_random,1000,3.45
 spin_random,1000,4.313
+spin_random,100,0.043
+spin_random,100,0.044
+spin_random,100,0.04
+spin_random,100,0.046
+spin_random,100,0.038
+spin_random,100,0.038
+spin_random,100,0.043
+spin_random,100,0.037
+spin_random,100,0.07
+spin_random,100,0.052
+spin_random,100,0.034
+spin_random,100,0.101
+spin_random,100,0.045
+spin_random,100,0.037

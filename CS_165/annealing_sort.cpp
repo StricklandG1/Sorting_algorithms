@@ -14,7 +14,7 @@ void annealing_sort(std::vector<int>& a, std::vector<int>& temps, std::vector<in
 		{
 			std::uniform_int_distribution<> distr(j + 1, ((len > (j + temps[i])) ? (j + temps[i]) : len));
 
-			for (size_t k = 0; k < reps_len; ++k)
+			for (size_t k = 0; k < reps[i]; ++k)
 			{
 				int s = distr(eng);
 				if (a[j] > a[s])
@@ -25,10 +25,10 @@ void annealing_sort(std::vector<int>& a, std::vector<int>& temps, std::vector<in
 				}
 			}
 		}
-		for (size_t j = len; j > 0; --j)
+		for (size_t j = len - 1; j > 0; --j)
 		{
 			std::uniform_int_distribution<> distr(((1 > j - temps[i]) ? 1 : j - temps[i]), j - 1);
-			for (size_t k = 0; k < reps_len; ++k)
+			for (size_t k = 0; k < reps[i]; ++k)
 			{
 				int s = distr(eng);
 				if (a[s] > a[j])
