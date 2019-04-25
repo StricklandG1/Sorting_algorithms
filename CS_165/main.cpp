@@ -39,7 +39,7 @@ int main()
 	test_set(LARGE_SET, false);
 	test_set(LARGE_SET, true);
 	test_set(LARGE_SET, true);
-	test_set(LARGE_SET, true);*/
+	test_set(LARGE_SET, true);
 	test_set(EVEN_LARGER_SET, false);
 	test_set(EVEN_LARGER_SET, false);
 	test_set(EVEN_LARGER_SET, false);
