@@ -12,6 +12,9 @@ void shell_sequence(std::vector<int>& a, int size);
 std::ostream& operator<<(std::ostream& out, const std::vector<int>& a);
 void write_to_file(std::string fName, int n, double t);
 void annealing_reps(std::vector<int>& a, int size, int reps);
+void annealing_sequence_1(std::vector<int>& a, std::vector<int>& b, int size);
+void annealing_sequence_2(std::vector<int>& a, std::vector<int>& b, int size);
+
 
 
 const int SMALL_SET = 100;
@@ -23,12 +26,12 @@ const int PHAT_ASS_SET = 1000000;
 int main()
 {
 	test_set(SMALL_SET, false);
-	/*test_set(SMALL_SET, false);
+	test_set(SMALL_SET, false);
 	test_set(SMALL_SET, false);
 	test_set(SMALL_SET, true);
 	test_set(SMALL_SET, true);
 	test_set(SMALL_SET, true);
-	test_set(MEDIUM_SET, false);
+	/*test_set(MEDIUM_SET, false);
 	test_set(MEDIUM_SET, false);
 	test_set(MEDIUM_SET, false);
 	test_set(MEDIUM_SET, true);
@@ -98,54 +101,79 @@ void test_set(int set_size, bool almost_sorted)
 			swap(a[distr(eng)], a[distr(eng)]);
 		}
 	}
+	clock_t start;
+	clock_t end;
+	double t = 0.0;
+	double min = INT_MAX;
 
-	b = a;
+	for (int i = 0; i < 3; ++i)
+	{
+		b = a;
 
-	//std::cout << "-------------------- BUBBLE SORT --------------------\n\n";
-	//double t = 0.0;
-	clock_t start = clock();
-	//bubble_sort(b);
-	clock_t end = clock();
-	//t = static_cast<float>(end - start) / CLOCKS_PER_SEC;
-	//std::string fName = (almost_sorted) ? "bubble_almost" : "bubble_random";
-	//write_to_file(fName, set_size, t);
+		std::cout << "-------------------- BUBBLE SORT --------------------\n\n";
+		double t = 0.0;
+		start = clock();
+		bubble_sort(b);
+		end = clock();
+		t = static_cast<float>(end - start) / CLOCKS_PER_SEC;
+		min = (t < min) ? t : min;
+	}
+	std::string fName = (almost_sorted) ? "bubble_almost" : "bubble_random";
+	write_to_file(fName, set_size, min);
+	t = 0.0;
+	min = INT_MAX;
+	for (int i = 0; i < 3; ++i)
+	{
+		b = a;
+		std::cout << "-------------------- INSERTION SORT --------------------\n\n";
+		start = clock();
+		insertion_sort(b);
+		end = clock();
+		t = static_cast<float>(end - start) / CLOCKS_PER_SEC;
+		min = (t < min) ? t : min;
+	}
+	fName = (almost_sorted) ? "insertion_almost" : "insertion_random";
+	write_to_file(fName, set_size, min);
 
-	//b = a;
-	//std::cout << "-------------------- INSERTION SORT --------------------\n\n";
-	//start = clock();
-	//insertion_sort(b);
-	//end = clock();
-	//t = static_cast<float>(end - start) / CLOCKS_PER_SEC;
-	//fName = (almost_sorted) ? "insertion_almost" : "insertion_random";
-	//write_to_file(fName, set_size, t);
+	t = 0.0;
+	double total = 0.0;
+	for (int i = 0; i < 3; ++i)
+	{
+		b = a;
+		std::cout << "------------------- SPIN THE BOTTLE -------------------\n\n";
+		start = clock();
+		spin_the_bottle_sort(b);
+		end = clock();
+		t = static_cast<float>(end - start) / CLOCKS_PER_SEC;
+		total += t;
+	}
+	t = total / 3;
+	fName = (almost_sorted) ? "spin_almost" : "spin_random";
+	write_to_file(fName, set_size, t);
 
-	//b = a;
-	//std::cout << "------------------- SPIN THE BOTTLE -------------------\n\n";
-	//start = clock();
-	//spin_the_bottle_sort(b);
-	//end = clock();
-	//t = static_cast<float>(end - start) / CLOCKS_PER_SEC;
-	//fName = (almost_sorted) ? "spin_almost" : "spin_random";
-	//write_to_file(fName, set_size, t);
-
-	//b = a;
-	//std::cout << "------------------- SHELL SORT -------------------\n\n";
-	//
+	t = 0.0;
+	min = INT_MAX;
 	std::vector<int> gaps;
-	//shell_sequence(gaps, set_size);
-	//start = clock();
-	//shell_sort(b, gaps);
-	//end = clock();
-	//t = static_cast<float>(end - start) / CLOCKS_PER_SEC;
-	//fName = (almost_sorted) ? "shell_almost" : "shell_random";
-	//write_to_file(fName, set_size, t);
+	shell_sequence(gaps, set_size);
+	for (int i = 0; i < 3; ++i)
+	{
+		b = a;
+		std::cout << "------------------- SHELL SORT -------------------\n\n";
+		start = clock();
+		shell_sort(b, gaps);
+		end = clock();
+		t = static_cast<float>(end - start) / CLOCKS_PER_SEC;
+		min = (t < min) ? t : min;
+	}
+	fName = (almost_sorted) ? "shell_almost" : "shell_random";
+	write_to_file(fName, set_size, min);
 
 	b = a;
 	std::cout << "------------------- ANNEALING SORT -------------------\n\n";
 	std::cout << "BEFORE:\n";
 	std::cout << b;
 	gaps.clear();
-	shell_sequence(gaps, set_size);
+	annealing_sequence_1(b, gaps, set_size);
 	std::cout << "gaps:\n";
 	gaps.push_back(0);
 	std::cout << gaps;
@@ -162,12 +190,32 @@ void test_set(int set_size, bool almost_sorted)
 
 }
 
+void annealing_sequence_1(std::vector<int>& a, std::vector<int>& b, int size)
+{
+	int len = a.size() / 2;
+	
+	for(int i = 1; i < len ; i*=2)
+	{
+		b.push_back(len - i);
+	}
+}
+
+void annealing_sequence_2(std::vector<int>& a, std::vector<int>& b, int size)
+{
+
+}
+
 void shell_sequence(std::vector<int>& a, int size)
 {
 	for (size_t i = size / 2; i != 0; i /= 2)
 	{
 		a.push_back(i);
 	}
+}
+
+void shell_sequence_2(std::vector<int>& a, int size)
+{
+
 }
 
 std::ostream& operator<<(std::ostream& out, const std::vector<int>& a)

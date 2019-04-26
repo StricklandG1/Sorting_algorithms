@@ -8,3 +8,6 @@ bubble_random,10000,50.672
 bubble_random,10000,50.794
 bubble_random,10000,50.849
 bubble_random,100000,5000.81
+bubble_random,100,0.008
+bubble_random,100,0.008
+bubble_random,100,0.008

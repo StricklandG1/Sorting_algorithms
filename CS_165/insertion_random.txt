@@ -8,3 +8,6 @@ insertion_random,10000,18.561
 insertion_random,10000,18.706
 insertion_random,10000,18.73
 insertion_random,100000,1827.76
+insertion_random,100,0.003
+insertion_random,100,0.003
+insertion_random,100,0.004

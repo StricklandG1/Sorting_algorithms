@@ -1,6 +1,6 @@
 #include "project1.h"
 
-void shell_sort(std::vector<int>& nums, std::vector<int>& gaps)
+void shell_sort(std::vector<int>& nums, const std::vector<int>& gaps)
 {
 	size_t len_a = nums.size();
 	size_t len_gap = gaps.size();
