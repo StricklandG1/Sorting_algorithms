@@ -7,3 +7,4 @@ bubble_almost,1000,0.279
 bubble_almost,10000,25.856
 bubble_almost,10000,25.893
 bubble_almost,10000,25.868
+bubble_almost,100000,2565.32

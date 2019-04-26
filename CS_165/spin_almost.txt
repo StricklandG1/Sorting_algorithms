@@ -7,3 +7,4 @@ spin_almost,1000,3.271
 spin_almost,10000,451.633
 spin_almost,10000,453.277
 spin_almost,10000,524.628
+spin_almost,100000,70183.6

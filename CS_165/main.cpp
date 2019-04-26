@@ -22,7 +22,7 @@ const int PHAT_ASS_SET = 1000000;
 
 int main()
 {
-	/*test_set(SMALL_SET, false);
+	test_set(SMALL_SET, false);
 	test_set(SMALL_SET, false);
 	test_set(SMALL_SET, false);
 	test_set(SMALL_SET, true);
@@ -39,7 +39,7 @@ int main()
 	test_set(LARGE_SET, false);
 	test_set(LARGE_SET, true);
 	test_set(LARGE_SET, true);
-	test_set(LARGE_SET, true);*/
+	test_set(LARGE_SET, true);
 	test_set(EVEN_LARGER_SET, false);
 	test_set(EVEN_LARGER_SET, false);
 	test_set(EVEN_LARGER_SET, false);
@@ -52,7 +52,7 @@ int main()
 	test_set(PHAT_ASS_SET, true);
 	test_set(PHAT_ASS_SET, true);
 	test_set(PHAT_ASS_SET, true);
-
+	
 	system("pause");
 	return 0;
 }
