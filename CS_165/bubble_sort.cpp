@@ -1,17 +1,17 @@
 #include "project1.h"
 
-void bubble_sort(std::vector<int>& a)
+void bubble_sort(std::vector<int>& nums)
 {
-	size_t len = a.size();
+	size_t len = nums.size();
 	for (size_t i = 0; i < len; ++i)
 	{
 		for (size_t j = 1; j < len - i; ++j)
 		{
-			if (a[j - 1] > a[j])
+			if (nums[j - 1] > nums[j])
 			{
-				int temp = a[j - 1];
-				a[j - 1] = a[j];
-				a[j] = temp;
+				int temp = nums[j - 1];
+				nums[j - 1] = nums[j];
+				nums[j] = temp;
 			}
 		}
 	}

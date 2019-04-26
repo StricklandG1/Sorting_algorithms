@@ -2,46 +2,46 @@
 #include <random>
 #include <iostream>
 
-bool sorted(std::vector<int>& a)
+bool sorted(const std::vector<int>& nums)
 {
-	size_t len = a.size();
+	size_t len = nums.size();
 	bool sorted = true;
 	int i = 0;
 	while (sorted && i < len - 1)
 	{
-		sorted = a[i] < a[i + 1];
+		sorted = nums[i] < nums[i + 1];
 		++i;
 	}
 	return sorted;
 }
 
-void spin_the_bottle_sort(std::vector<int>& a)
+void spin_the_bottle_sort(std::vector<int>& nums)
 {
-	size_t len = a.size();
+	size_t len = nums.size();
 	std::random_device rd;
 	std::mt19937 eng(rd());
 	std::uniform_int_distribution<> distr(0, len - 1);
-	while (!sorted(a))
+	while (!sorted(nums))
 	{
 		for (int i = 0; i < len; ++i)
 		{
 			int j = distr(eng);
 			if (i < j)
 			{
-				if (a[i] > a[j])
+				if (nums[i] > nums[j])
 				{
-					int temp = a[i];
-					a[i] = a[j];
-					a[j] = temp;
+					int temp = nums[i];
+					nums[i] = nums[j];
+					nums[j] = temp;
 				}
 			}
 			else if (j < i)
 			{
-				if (a[j] > a[i])
+				if (nums[j] > nums[i])
 				{
-					int temp = a[j];
-					a[j] = a[i];
-					a[i] = temp;
+					int temp = nums[j];
+					nums[j] = nums[i];
+					nums[i] = temp;
 				}
 			}
 		}

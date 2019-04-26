@@ -8,3 +8,4 @@ insertion_almost,10000,0.148
 insertion_almost,10000,0.182
 insertion_almost,10000,0.176
 insertion_almost,100000,1.805
+
