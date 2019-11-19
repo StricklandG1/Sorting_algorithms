@@ -1,3 +1,0 @@
-shell_almost,100,0.002
-shell_almost,100,0.002
-shell_almost,100,0.001

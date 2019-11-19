@@ -118,11 +118,13 @@
     <ClCompile Include="annealing_sort.cpp" />
     <ClCompile Include="bubble_sort.cpp" />
     <ClCompile Include="insertion_sort.cpp" />
+    <ClCompile Include="inversions.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="shell_sort.cpp" />
     <ClCompile Include="spin_the_bottle_sort.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="inversions.h" />
     <ClInclude Include="project1.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

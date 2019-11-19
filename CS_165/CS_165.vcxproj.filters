@@ -33,9 +33,15 @@
     <ClCompile Include="annealing_sort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="inversions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="project1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inversions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
