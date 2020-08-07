@@ -49,15 +49,7 @@ int main()
 	test_set(EVEN_LARGER_SET, true);
 	test_set(EVEN_LARGER_SET, true);
 	test_set(EVEN_LARGER_SET, true);
-	/*
-	test_set(PHAT_ASS_SET, false);
-	test_set(PHAT_ASS_SET, false);
-	test_set(PHAT_ASS_SET, false);
-	test_set(PHAT_ASS_SET, true);
-	test_set(PHAT_ASS_SET, true);
-	test_set(PHAT_ASS_SET, true);
-	test_set(PHAT_ASS_SET, true); 
-	*/
+
 	system("pause");
 	return 0;
 }
